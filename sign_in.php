@@ -21,8 +21,11 @@ if($cek > 0){
   $_SESSION['email'] = $email;
   $_SESSION['pass'] = $pass; 
 
-  header("location:index2.html");
-}else{
- header("location:index.php?pesan=gagal");
+  header("location:index2.php");
+}else{  
+  echo "<script>
+  alert('Email/Password yang anda masukkan salah');
+  window.location.href='sign_in.html';
+  </script>";
 }
 ?>
