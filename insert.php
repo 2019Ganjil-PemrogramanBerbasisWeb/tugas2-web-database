@@ -16,6 +16,8 @@ if (!empty($name) || !empty($email) || !empty($pass) || !empty($re_pass)) {
     } else {
      $SELECT = "SELECT email From account Where email = ? Limit 1";
      $INSERT = "INSERT Into account (id, name, email, pass, re_pass) values(?, ?, ?, ?, ?)";
+     $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
+     $pass = filter_input(INPUT_POST, 'pass', FILTER_SANITIZE_STRING);
      $stmt = $conn->prepare($SELECT);
      $stmt->bind_param("s", $email);
      $stmt->execute();
