@@ -1,31 +1,58 @@
-<?php 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign In</title>
 
-echo session_save_path();
-session_start();
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
 
-include 'conn.php';
- 
+    <!-- Main css -->
+    <link rel="stylesheet" href="css/style_sign.css">
+</head>
+<body style="overflow: scroll">
+  <div>
+    <section class="sign-in">
+        <div class="container">
+            <div class="signin-content">
+                <div class="signin-image">
+                    <figure><img src="images/signin-image.jpg" alt="sing up image"></figure>
+                    <a href="sign_up.php" class="signup-image-link">Create an account</a>
+                </div>
 
-$email = $_POST['email'];
-$pass = $_POST['pass'];
- 
-echo "$email $pass";
- 
-$login = mysqli_query($conn,"select * from account where email='$email' and pass='$pass'");
-// menghitung jumlah data yang ditemukan
-$cek = mysqli_num_rows($login);
-header();
- 
-if($cek > 0){ 
+                
+                <div class="signin-form">
+                    <h2 class="form-title">Sign In</h2>
+                    <form method="POST" class="register-form" id="login-form" action="ceklogin.php">
+                        <div class="form-group">
+                            <label for="email"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                            <input type="text" name="email" id="email" placeholder="Your Email" required/>
+                        </div>
+                        <div class="form-group">
+                            <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
+                            <input type="password" name="pass" id="pass" placeholder="Password" required/>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
+                            <label for="remember-me" class="label-agree-term"><span><span></span></span>Remember me</label>
+                        </div>
+                        <div class="form-group form-button">
+                            <input type="submit" name="login" id="login" class="form-submit" value="Log in" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+  </div>
 
-  $_SESSION['email'] = $email;
-  $_SESSION['pass'] = $pass; 
+    <!-- JS -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="js/main_sign.js"></script>
+</body>
+</html>
 
-  header("location:index2.php");
-}else{  
-  echo "<script>
-  alert('Email/Password yang anda masukkan salah');
-  window.location.href='sign_in.html';
-  </script>";
-}
-?>
+
+

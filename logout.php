@@ -1,5 +1,10 @@
-<?php
+<?php 
+// mengaktifkan session
 session_start();
-if(session_destroy()) // Destroying All Sessions {
-header("Location: index.html"); // Redirecting To Home Page
+ 
+// menghapus semua session
+session_destroy();
+ 
+// mengalihkan halaman sambil mengirim pesan logout
+header("location:index.php?pesan=logout");
 ?>

@@ -1,7 +1,7 @@
  <?php
     include('conn.php');
 
-    if (isset($_POST['account']))
+    if (isset($_POST['login_ID']))
         {
             $email = mysqli_real_escape_string($con, $_POST['email']);
             $pass = mysqli_real_escape_string($con, $_POST['pass']);
@@ -16,7 +16,7 @@
 
                                 if($_SESSION['login_ID'] == 2 || $_SESSION['login_ID'] == 3 || $_SESSION['login_ID'] == 4 || $_SESSION['login_ID'] == 5 )
                                 {
-                                    header('location: index2.php');
+                                    header('location: login.php');
                                 }
                                 else
                                 {
