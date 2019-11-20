@@ -9,5 +9,7 @@
 		<input type="submit" name="upload" value="Upload">
 	</form>
     <a href="show_up.php">Lihat file yang sudah terupload</a>
+    <a href="list.php">Download file</a>
+
 </body>
 </html>
