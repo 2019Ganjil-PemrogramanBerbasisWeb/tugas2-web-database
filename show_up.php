@@ -34,6 +34,7 @@ if ($result->num_rows > 0) {
 $conn->close();
 ?>
 <a href="upload.php">Upload</a>
+<a href="list.php">Download</a>
 <a href="index.php">Balik Home</a>
 </body>
 </html>
