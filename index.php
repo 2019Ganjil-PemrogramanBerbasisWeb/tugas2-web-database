@@ -37,6 +37,7 @@ if(isset($_GET['pesan'])){
                 <li class="nav-item"><a class="nav-link" href="about.php">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="news.php">News</a></li>
                 <li class="nav-item"><a class="nav-link" href="contact.php">Contact</a></li>
+		<li class="nav-item"><a class="nav-link" href="upload.php">Upload</a></li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
                 <a href="sign_in.php" class="btn btn-outline-dark my-2 my-sm-0 mr-3">Sign In</a> 
